@@ -1,0 +1,7 @@
+del=$1
+files=`ls tshirts | wc -l`
+for i in `seq  $del $((files))`
+do 
+    mv tshirts/tshirt$((i+1)).png tshirts/tshirt$i.png
+    mv designs/tshirt$((i+1)).png designs/tshirt$i.png
+done

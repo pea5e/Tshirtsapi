@@ -1,0 +1,7 @@
+CREATE TABLE commade(id INTEGER PRIMARY KEY AUTOINCREMENT,lieu varchar(100),date date,nom_client varchar(40),carte_bancaire INTEGER);
+CREATE TABLE sqlite_sequence(name,seq);
+CREATE TABLE designer(id INTEGER PRIMARY KEY AUTOINCREMENT,email varchar(40),password varchar(140),nom varchar(20));
+CREATE TABLE tshirt(id INTEGER PRIMARY KEY AUTOINCREMENT,prix float,designer int,foreign key(designer) references designer(id));
+CREATE TABLE achat(id INTEGER PRIMARY KEY AUTOINCREMENT,commande_id integer,tshirt integer,qte integer,foreign key(tshirt) references tshirt(id),foreign key(commande_id) references commande(id));
+CREATE UNIQUE INDEX email_in on designer(email);
+CREATE TABLE message(id INTEGER PRIMARY KEY AUTOINCREMENT,email varchar(40),message varchar(120),date date);
